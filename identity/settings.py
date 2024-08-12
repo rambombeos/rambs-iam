@@ -30,17 +30,14 @@ SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
-# ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 ALLOWED_HOSTS = ["*"]
 CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 CORS_ALLOW_HEADERS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://*.127.0.0.1',
-    'http://*.localhost',
-]
+# Trusted origins
+CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',

@@ -27,8 +27,6 @@ def login(request):
 
 @api_view(["POST"])
 def signup(request):
-    print(request.data)
-
     serializer = SignupSerializer(data=request.data)
     if serializer.is_valid():
         # Check if user already exists

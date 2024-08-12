@@ -19,6 +19,6 @@ from django.urls import path, include
 from users.views import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('auth/', include('users.urls')), 
+    path('iam/admin/', admin.site.urls),
+    path('iam/auth/', include('users.urls')), 
 ]
